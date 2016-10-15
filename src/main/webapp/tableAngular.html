@@ -1,17 +1,46 @@
-<!DOCTYPE html>
+<html ng-app="TableApp">
+    <head>
+        <title>Angular Table</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="js/app.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div ng-controller = "tableController as tableCtrl">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td><h3>Age</h3></td>
+                        <td><h3>Eye Color</h3></td>
+                        <td><h3>Name</h3></td>
+                        <td><h3>Gender</h3></td>
+                        <td><h3>Email</h3></td>
+                        <td><h3>Friends</h3></td>
+                    </tr>
+                </thead>
 
-<html>
-  <head>
-    <title>TODO supply a title</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  </head>
-  <body>
-    <div>
-      <div>Add Your Table made with Angular here</div>
-      <a href='index.html'>Back</a>
-    </div>
-  </body>
+                <tbody>
+                    <tr ng-repeat="member in memberCtrl.Members">
+                        <td>{{member.age}}</td>
+                        <td>{{member.eyeColor}}</td>
+                        <td>{{member.name}}</td>
+                        <td>{{member.gender}}</td>
+                        <td>{{member.email}}</td>
+                        <td>
+                            <p ng-repeat="friend in memberCtrl.Members.friends">
+                                {{member.age}}
+                                {{member.eyeColor}}
+                                {{member.name}}
+                                {{member.gender}}
+                                {{member.email}}
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href='index.html'>Back</a>
+        </div>
+    </body>
 </html>
