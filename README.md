@@ -1,2 +1,2 @@
 # SP6-4
-Excercise 4 from Study Point Excersize 6
+Exercise 4 from Study Point Exercise 6
